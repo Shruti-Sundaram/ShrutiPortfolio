@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Section</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .about-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-section img {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 20px;
+  }
+  .about-section p {
+    color: #333;
+  }
+
+  /* Additional CSS for Projects Section */
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+}
+.card-img-top {
+  max-height: 180px; /* Adjust this value to fit the image properly in the card */
+  object-fit: cover; /* This makes sure the image covers the area properly */
+}
+.card-body {
+  padding: 15px;
+}
+.card-title {
+  font-size: 1.25rem;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Additional CSS for Skills Section */
+.skills-section {
+  background-color: #fff; /* White background for the entire section */
+  padding: 0.5cm 0; /* Padding to ensure space above and below the card */
+  width: 100vw; /* Full viewport width */
+  margin-left: -50vw; /* Offset the section to the left */
+  left: 50%; /* Center the section horizontally */
+  position: relative; /* Relative positioning to align it correctly */
+}
+
+.skills-section .container {
+   /* Ensure the container spans the full width */
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+}
+
+.skills-section .row {
+  width: 100%; /* Full width of the row */
+  display: flex;
+  justify-content: center; /* Center the card horizontally */
+  margin: 0; /* Remove default margins */
+  background-color: #fff; /* Ensure the row itself has a white background */
+  padding: 20px 0; /* Add some padding for spacing */
+}
+
+.skills-section .card {
+  margin: 0 auto; /* Center the card within the row */
+  max-width: 400px; /* Control the maximum width of the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align the text */
+}
+
+.skills-section .card-img-top {
+  padding: 10px;
+  background-color: #f8f9fa;
+  height: 180px;
+  object-fit: contain;
+}
+
+.skills-section .card-body {
+  padding: 15px;
+}
+
+.skills-section .access-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skills-section .access-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Additional CSS for Contact Section */
+.contact-section {
+  padding: 50px 0;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px; /* Size of your icons */
+  margin-bottom: 10px;
+}
+/* Hover effect for icons */
+.social-icon:hover {
+  opacity: 0.7;
+}
+/* Style for links in the Contact section */
+.contact-section a {
+  color: #fff;
+  text-decoration: none; /* Removes underline from links */
+  display: inline-block; /* Allows for margin on the bottom */
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: #ddd; /* Color when hovering over the link */
+}
+
+/* CSS for Sticky Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+}
+
+/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+body { 
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style for navigation bar links */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter white when hovering over links */
+}
+
+/* Media query for responsive navbar collapsing */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Same as navbar color for seamless look */
+  }
+}
+
+.about-section .container {
+  text-align: center; /* Center text and elements in the container */
+}
+
+.about-section img {
+  max-width: 100%; /* Make sure the image is responsive */
+  height: auto;
+  margin-bottom: 20px; /* Space below the image */
+}
+
+.compact-paragraph {
+  max-width: 600px; /* Set the maximum width of the paragraph */
+  margin: 0 auto 20px; /* Center the paragraph and add space below it */
+  text-align: left; /* Optional: Align text to the left if needed */
+}
+
+
+.about-section .compact-paragraph {
+  max-width: 600px; /* Adjust width as necessary */
+  margin: 0 auto 20px;
+  text-align: left; /* Default to left-aligned for compact paragraphs */
+}
+
+.about-section .central-paragraph {
+  text-align: center; /* Center-align the text within this paragraph */
+  margin: 0 auto 20px; /* Center the paragraph with auto margins */
+  max-width: 600px; /* Keep the same width restriction for consistency */
+}
+
+.access-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .access-button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+
+  .contact-section {
+  padding: 60px 0; /* Adjust the padding to your liking */
+}
+
+.contact-section .social-icon {
+  width: 50px; /* Adjust the size of the social icons */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contact-section a {
+  color: white; /* Ensure the links are white */
+  text-decoration: none;
+}
+
+
+.email-popup {
+            display: none; /* Hidden by default */
+            position: absolute; /* Positioned relatively to the closest positioned ancestor */
+            background-color: #f9f9f9; /* Light background */
+            border: 1px solid #ccc; /* Border */
+            padding: 10px; /* Some padding */
+            margin-top: 10px; /* Some space from the icon */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for pop-up */
+            z-index: 10; /* Ensures it appears above other elements */
+            border-radius: 5px; /* Rounded corners */
+            color: black;
+        }
+
+        /* Optional: Styling for the link */
+        .gmail-link {
+            text-decoration: none; /* No underline */
+            color: inherit; /* Inherits color */
+        }
+
+        /* Style for the icon */
+        .social-icon {
+            width: 40px; /* Adjust icon size */
+            height: auto; /* Keep aspect ratio */
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+
+</style>
+</head>
+
+<body>
+
+  <section id="about" class="about-section">
+    <div class="container text-center">
+      <h2>SHRUTI SUNDARAM</h2>
+      <p>Welcome to my Portfolio!</p>
+      <p class="compact-paragraph">I am Shruti Sundaram, a postgraduate student pursuing an MSc in Computer Science at the University of Nottingham.</p>
+      <p class="compact-paragraph">With a keen interest and hands-on experience in machine learning, natural language processing, and data analysis, I am passionate about leveraging technology to solve complex problems and drive innovation.</p>
+      <!-- Add a class to target this paragraph for central alignment -->
+      <p class="compact-paragraph central-paragraph">Feel free to explore my projects 😊</p>
+    </div>
+  </section>
+  
+  
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+      <!-- Project 1 -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <img src="images/pics/waterpump.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title"><b>Waterpoint Functionality Classification using Machine Learning Techniques</b></h5>
+            <p></p>
+            <p>
+              <a href="documents/DSML_Report.pdf" class="btn btn-primary" target="_blank">Documentation</a>
+              <a href="https://github.com/Shruti-Sundaram/Pump-it-up-Mining-the-water-table" class="btn btn-secondary">Source Code</a>
+            </p>
+            <p class="card-text">Developed a predictive model to classify water pumps in Tanzania as functional, needing repair, or non-functional using data from Taarifa and the Tanzanian Ministry of Water.
+              Implemented comprehensive data preprocessing, including cleaning, outlier handling, one-hot encoding, discretization, and normalization.
+            </p>
+            <p>Models implemented:</p>
+            <p>• <b>Voting Classifier:</b> Combined Random Forest and XGBoost for ensemble learning. Achieved a balanced accuracy of 76% and a test accuracy of 75%.</p>
+            <p>• <b>Gradient Boost:</b> Achieved a balanced accuracy of 74% and a test accuracy of 73%.</p>
+            <p>• <b>XGBoost:</b> Achieved a balanced accuracy of 74% and a test accuracy of 73%.</p>
+            <p>• <b>Decision Trees:</b> Standard Decision Tree achieved a balanced accuracy of 66% and a test accuracy of 76%, while Decision Tree with Recursive Feature Elimination (RFE) achieved a balanced accuracy of 65% and a test accuracy of 75%</p>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <img src="images/pics/foodiebot.jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title"><b>FoodieFriend Chatbot</b></h5>
+            <p>
+              <a href="documents/Shruti_Sundaram_Chatbot_Report.pdf" class="btn btn-primary" target="_blank">Documentation</a>
+              <a href="https://github.com/Shruti-Sundaram/Chatbot-using-python" class="btn btn-secondary">Source Code</a>
+            </p>
+            <p class="card-text">Designed a comprehensive chatbot system capable of handling user interactions, menu browsing, order placement, and payment processing.</p>
+            <p>Technologies used include Natural Language Processing (NLP), Python, NLTK, Jaccard Similarity, User-Centric Design Principles, Responsible Research and Innovation (RRI).</p>
+            <p>• <b>Intent Matching:</b> Implemented intent identification using Jaccard similarity to accurately interpret user commands and generate appropriate responses.</p>
+            <p>• <b>Identity Management:</b> Integrated user identity tracking to personalize interactions by extracting and storing user names using POS tagging.</p>
+            <p>• <b>Question Answering:</b> Developed a question-answering module leveraging a pre-processed dataset to respond to user queries.</p>
+            <p>• <b>Small Talk:</b> Created a small talk functionality with a dataset of predefined conversational phrases for natural user interaction, enhancing user experience with conversational responses.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <!-- <div class="col-md-6 mb-4">
+        <div class="card">
+          <img src="images/pics/chatbot.png" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Project 3</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-primary">Blog Post</a>
+            <a href="#" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<!-- Skills Section -->
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="card text-center">
+          <img src="images/pics/cv2.png" class="card-img-top" alt="CV">
+          <div class="card-body">
+            <a href="documents/Shruti-Sundaram-CV.pdf" class="access-button" target="_blank">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      
+      <!-- Skill 2 -->
+      <!-- <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualization</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div> -->
+
+
+      <!-- Skill 3 -->
+      <!-- <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/3.png" class="card-img-top" alt="SQL">
+          <div class="card-body">
+            <h5 class="card-title">SQL</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div> -->
+
+
+      <!-- Skill 4 -->
+      <!-- <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
+          <div class="card-body">
+            <h5 class="card-title">Data Storytelling</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div> -->
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-2 col-md-4 mb-4 d-flex flex-column align-items-center">
+        <a href="https://linkedin.com/in/shruti-sundaram" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+          <!-- LinkedIn -->
+        </a>
+      </div>
+      <body>
+        <div class="col-lg-2 col-md-4 mb-4 d-flex flex-column align-items-center">
+            <a href="#" id="gmail-icon" class="gmail-link">
+                <img src="icons/resized_gmail.png" alt="Email" class="social-icon">
+            </a>
+            <span id="email-popup" class="email-popup">shruti.sundaram.28@gmail.com</span>
+        </div>
+    
+        <script>
+            document.getElementById('gmail-icon').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                var popup = document.getElementById('email-popup');
+                if (popup.style.display === 'none' || popup.style.display === '') {
+                    popup.style.display = 'block'; // Show the pop-up
+                } else {
+                    popup.style.display = 'none'; // Hide the pop-up
+                }
+            });
+    
+            // Optional: Hide the pop-up when clicking outside of it
+            document.addEventListener('click', function(event) {
+                var popup = document.getElementById('email-popup');
+                var icon = document.getElementById('gmail-icon');
+                if (popup.style.display === 'block' && !popup.contains(event.target) && !icon.contains(event.target)) {
+                    popup.style.display = 'none'; // Hide the pop-up
+                }
+            });
+        </script>
+      <div class="col-lg-2 col-md-4 mb-4 d-flex flex-column align-items-center">
+        <a href="https://github.com/Shruti-Sundaram" target="_blank">
+          <img src="icons/github.png" alt="GitHub" class="social-icon">
+          <!-- GitHub -->
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">CV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Other content of the body -->
+
+<!-- Place this script before the closing body tag -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Adjust the offset value as needed
+    var offset = 90; // This should be the same as the padding-top set in the CSS for body
+
+    // Add click event listener for the CV nav link
+    document.querySelector('a.nav-link[href="#skills"]').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+
+      var target = document.querySelector(this.getAttribute('href')); // Get the target element (#skills section)
+      var targetPosition = target.offsetTop - offset; // Calculate the scroll position with the offset
+
+      window.scrollTo({
+        top: targetPosition, // Scroll to the calculated position
+        behavior: 'smooth' // Smooth scroll
+      });
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Adjust the offset value as needed
+    var offset = 65; // This should be the same as the padding-top set in the CSS for body
+
+    // Add click event listener for the CV nav link
+    document.querySelector('a.nav-link[href="#projects"]').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+
+      var target = document.querySelector(this.getAttribute('href')); // Get the target element (#skills section)
+      var targetPosition = target.offsetTop - offset; // Calculate the scroll position with the offset
+
+      window.scrollTo({
+        top: targetPosition, // Scroll to the calculated position
+        behavior: 'smooth' // Smooth scroll
+      });
+    });
+  });
+</script>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
